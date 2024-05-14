@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxa de Engajamento no Instagram</title>
+
+</head>
+<body>
+    <div id="container">
+        <h2>Calcule sua Taxa de Engajamento no Instagram</h2>
+        <div>
+            <label for="direct">Direct:</label>
+            <input type="number" id="direct" value="50">
+        </div>
+        <div>
+            <label for="stories">Stories:</label>
+            <input type="number" id="stories" value="100">
+        </div>
+        <div>
+            <label for="comentarios">Comentários:</label>
+            <input type="number" id="comentarios" value="80">
+        </div>
+        <div>
+            <label for="compartilhamentos">Compartilhamentos:</label>
+            <input type="number" id="compartilhamentos" value="30">
+        </div>
+        <div>
+            <label for="salvamentos">Salvamentos:</label>
+            <input type="number" id="salvamentos" value="70">
+        </div>
+        <div>
+            <label for="curtidas">Curtidas:</label>
+            <input type="number" id="curtidas" value="200">
+        </div>
+        <button onclick="calcularTaxaEngajamento()">Calcular</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calcularTaxaEngajamento() {
+            const direct = parseInt(document.getElementById('direct').value);
+            const stories = parseInt(document.getElementById('stories').value);
+            const comentarios = parseInt(document.getElementById('comentarios').value);
+            const compartilhamentos = parseInt(document.getElementById('compartilhamentos').value);
+            const salvamentos = parseInt(document.getElementById('salvamentos').value);
+            const curtidas = parseInt(document.getElementById('curtidas').value);
+            const seguidores = 10000; // Defina o número de seguidores aqui
+
+            const totalInteracoes = direct + stories + comentarios + compartilhamentos + salvamentos + curtidas;
+            const taxaEngajamento = (totalInteracoes / seguidores) * 100;
+
+            document.getElementById('result').innerHTML = "Taxa de Engajamento: " + taxaEngajamento.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>
